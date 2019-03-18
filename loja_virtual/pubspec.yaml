@@ -1,5 +1,5 @@
 name: loja_virtual
-description: Projeto de uma loja virtual.
+description: A new Flutter project.
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -32,6 +32,7 @@ dependencies:
   scoped_model: ^1.0.1
   path_provider: ^0.5.0+1
   url_launcher: ^5.0.2
+
 
 dev_dependencies:
   flutter_test:
