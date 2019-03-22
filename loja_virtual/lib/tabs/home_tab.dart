@@ -40,8 +40,11 @@ class HomeTab extends StatelessWidget {
                     child: Container(
                       height: 200,
                       alignment: Alignment.center,
-                      child: CircularProgressIndicator(
-                        valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                      child: Center(
+                        child: CircularProgressIndicator(
+                          valueColor:
+                              AlwaysStoppedAnimation<Color>(Colors.white),
+                        ),
                       ),
                     ),
                   );
@@ -70,4 +73,3 @@ class HomeTab extends StatelessWidget {
     );
   }
 }
-
