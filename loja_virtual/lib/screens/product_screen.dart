@@ -38,11 +38,11 @@ class _ProductScreenState extends State<ProductScreen> {
               dotSpacing: 15,
               dotBgColor: Colors.transparent,
               dotColor: _primaryColor,
-              autoplay: false,
+              autoplayDuration: Duration(seconds: 3),
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(15),
+            padding: EdgeInsets.all(16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
@@ -68,12 +68,12 @@ class _ProductScreenState extends State<ProductScreen> {
                 SizedBox(
                   height: 35,
                   child: GridView(
-                    padding: EdgeInsets.symmetric(vertical: 4),
+                    padding: EdgeInsets.symmetric(vertical: 3),
                     scrollDirection: Axis.horizontal,
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 1,
                         mainAxisSpacing: 8,
-                        childAspectRatio: 0.48),
+                        childAspectRatio: 0.515),
                     children: _product.sizes.map((size) {
                       return GestureDetector(
                         onTap: () {
@@ -86,7 +86,9 @@ class _ProductScreenState extends State<ProductScreen> {
                             borderRadius: BorderRadius.all(Radius.circular(4)),
                             border: Border.all(
                               width: 2.5,
-                              color: size == selectedSize ? _primaryColor : Colors.grey[500],
+                              color: size == selectedSize
+                                  ? _primaryColor
+                                  : Colors.grey[500],
                             ),
                           ),
                           width: 50,
@@ -96,6 +98,28 @@ class _ProductScreenState extends State<ProductScreen> {
                       );
                     }).toList(),
                   ),
+                ),
+                SizedBox(height: 16),
+                SizedBox(
+                  height: 44,
+                  child: RaisedButton(
+                    onPressed: selectedSize != null ? () {} : null,
+                    child: Text(
+                      "Adicionar ao Carrinho",
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    color: _primaryColor,
+                    textColor: Colors.white,
+                  ),
+                ),
+                SizedBox(height: 16),
+                Text(
+                  "Descrição",
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                ),
+                Text(
+                  _product.description,
+                  style: TextStyle(fontSize: 16),
                 )
               ],
             ),

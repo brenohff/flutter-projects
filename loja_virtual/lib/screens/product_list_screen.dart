@@ -35,7 +35,6 @@ class ProductListScreen extends StatelessWidget {
               return Center(child: CircularProgressIndicator());
             } else {
               return TabBarView(
-                physics: NeverScrollableScrollPhysics(),
                 children: <Widget>[
                   GridView.builder(
                     padding: EdgeInsets.all(4),
