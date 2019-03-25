@@ -62,7 +62,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     alignment: Alignment.centerRight,
                     child: FlatButton(
                         padding: EdgeInsets.zero,
-                        onPressed: () {},
+                        onPressed: () {
+                          model.recoverPass();
+                        },
                         child: Text(
                           "Esqueci minha senha",
                           textAlign: TextAlign.right,
