@@ -3,6 +3,9 @@ import 'package:loja_virtual/model/cart_model.dart';
 import 'package:loja_virtual/model/user_model.dart';
 import 'package:loja_virtual/screens/login_screen.dart';
 import 'package:loja_virtual/tiles/cart_product_tile.dart';
+import 'package:loja_virtual/widgets/cart_price.dart';
+import 'package:loja_virtual/widgets/discount_card.dart';
+import 'package:loja_virtual/widgets/ship_card.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 class CartScreen extends StatelessWidget {
@@ -74,21 +77,33 @@ class CartScreen extends StatelessWidget {
                   textAlign: TextAlign.center),
             );
           } else {
-            return buildCartScreen(model);
+            return buildCartScreen(model, context);
           }
         },
       ),
     );
   }
 
-  Widget buildCartScreen(CartModel model) {
+  Widget buildCartScreen(CartModel model, BuildContext context) {
     return ListView(
       children: <Widget>[
         Column(
           children: model.productsList.map((product) {
             return CartProductTile(product);
           }).toList(),
-        )
+        ),
+        DiscountCard(),
+        ShipCard(),
+        CartPrice(() async {
+          String orderId = await model.finishOrder();
+          if (orderId != null) {
+            Scaffold.of(context).showSnackBar(SnackBar(
+              content: Text("Pedido realizado com sucesso!"),
+              backgroundColor: Theme.of(context).primaryColor,
+              duration: Duration(seconds: 5),
+            ));
+          }
+        })
       ],
     );
   }

@@ -43,6 +43,8 @@ class CartProductTile extends StatelessWidget {
   }
 
   Widget _buildContent(BuildContext context) {
+    CartModel.of(context).updatePrices();
+
     return Row(
       children: <Widget>[
         Container(
@@ -72,15 +74,19 @@ class CartProductTile extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     IconButton(
-                      onPressed: cartProduct.quantity > 1 ? () {
-                        CartModel.of(context).decProduct(cartProduct);
-                      } : null,
+                      onPressed: cartProduct.quantity > 1
+                          ? () {
+                              CartModel.of(context).decProduct(cartProduct);
+                            }
+                          : null,
                       icon: Icon(Icons.remove,
                           color: Theme.of(context).primaryColor),
                     ),
                     Text(cartProduct.quantity.toString()),
                     IconButton(
-                      onPressed: () {CartModel.of(context).incProduct(cartProduct);},
+                      onPressed: () {
+                        CartModel.of(context).incProduct(cartProduct);
+                      },
                       icon: Icon(Icons.add,
                           color: Theme.of(context).primaryColor),
                     ),

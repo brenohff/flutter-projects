@@ -117,6 +117,7 @@ class _ProductScreenState extends State<ProductScreen> {
 
                             if (UserModel.of(context).isLoggedIn()) {
                               CartModel.of(context).addCartItem(cartProduct);
+                              Navigator.of(context).pop();
                             } else {
                               Navigator.of(context).push(MaterialPageRoute(
                                   builder: (context) => LoginScreen()));
