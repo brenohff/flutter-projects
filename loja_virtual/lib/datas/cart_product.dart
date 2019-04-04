@@ -1,4 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+x'import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:loja_virtual/datas/products_data.dart';
 
 class CartProduct {

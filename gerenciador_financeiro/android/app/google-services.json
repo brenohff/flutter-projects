@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "691880552201",
+    "firebase_url": "https://gerfinancas-f5133.firebaseio.com",
+    "project_id": "gerfinancas-f5133",
+    "storage_bucket": "gerfinancas-f5133.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:691880552201:android:b418692ca1b0b1e9",
+        "android_client_info": {
+          "package_name": "br.com.brenohff.gerenciador_financeiro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhNQpDd8nem-M5hDpcUbkOLfEVhFWrx5k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "691880552201-4abl3tcnst0jv96put09sjhhc82gsmn1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
