@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:flutter_tube/models/VideoModel.dart';
 import 'package:http/http.dart' as http;
 
 const API_KEY = "AIzaSyA4BUv2qEleEnf95F6JT5szwP5uKXzgtqs";
@@ -12,6 +15,21 @@ class Api {
   searchVideo(String search) async {
     http.Response response = await http.get(
         "https://www.googleapis.com/youtube/v3/search?part=snippet&q=$search&type=video&key=$API_KEY&maxResults=10");
+
+    decode(response);
   }
 
+  List<VideoModel> decode(http.Response response) {
+    if (response.statusCode == 200) {
+      var decoded = json.decode(response.body);
+
+      List<VideoModel> videoList = decoded["items"].map<VideoModel>((video) {
+        return VideoModel.fromJson(video);
+      }).toList();
+
+      return videoList;
+    } else {
+      throw Exception("Failed to load videos");
+    }
+  }
 }
