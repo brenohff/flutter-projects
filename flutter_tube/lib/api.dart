@@ -9,12 +9,9 @@ const API_KEY = "AIzaSyA4BUv2qEleEnf95F6JT5szwP5uKXzgtqs";
  */
 
 class Api {
-  Future<Map<String, dynamic>> searchVideo(String search) async {
+  searchVideo(String search) async {
     http.Response response = await http.get(
         "https://www.googleapis.com/youtube/v3/search?part=snippet&q=$search&type=video&key=$API_KEY&maxResults=10");
-
-    return null;
   }
-
 
 }
