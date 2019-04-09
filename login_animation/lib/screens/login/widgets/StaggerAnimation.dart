@@ -28,28 +28,33 @@ class StaggerAnimation extends StatelessWidget {
         onTap: () {
           animationController.forward();
         },
-        child: buttonZoomOut.value <= 70
-            ? Container(
-                width: buttonSqueeze.value,
-                height: 60,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: Color.fromRGBO(247, 64, 106, 1),
-                  borderRadius: BorderRadius.all(Radius.circular(30)),
-                ),
-                child: _buildInside(context),
-              )
-            : Container(
-                width: buttonZoomOut.value,
-                height: buttonZoomOut.value,
-                decoration: BoxDecoration(
-                  color: Color.fromRGBO(247, 64, 106, 1),
+        child: Hero(
+          tag: "fade",
+          child: buttonZoomOut.value <= 70
+              ? Container(
+                  width: buttonSqueeze.value,
+                  height: 60,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: Color.fromRGBO(247, 64, 106, 1),
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                  ),
+                  child: _buildInside(context),
+                )
+              : Container(
+                  width: buttonZoomOut.value,
+                  height: buttonZoomOut.value,
+                  decoration: BoxDecoration(
+                    color: Color.fromRGBO(247, 64, 106, 1),
 //                  shape: buttonZoomOut.value < 500
 //                      ? BoxShape.circle
 //                      : BoxShape.rectangle,
-                  borderRadius: buttonZoomOut.value < 500 ? BorderRadius.all(Radius.circular(30)) : BorderRadius.all(Radius.circular(0)),
+                    borderRadius: buttonZoomOut.value < 500
+                        ? BorderRadius.all(Radius.circular(30))
+                        : BorderRadius.all(Radius.circular(0)),
+                  ),
                 ),
-              ),
+        ),
       ),
     );
   }

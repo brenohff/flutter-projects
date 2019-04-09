@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_animation/screens/home/HomeScreen.dart';
 import 'package:login_animation/screens/login/widgets/FormContainer.dart';
 import 'package:login_animation/screens/login/widgets/SignUpButton.dart';
 import 'package:login_animation/screens/login/widgets/StaggerAnimation.dart';
@@ -20,6 +21,12 @@ class _LoginScreenState extends State<LoginScreen>
       vsync: this,
       duration: Duration(seconds: 2),
     );
+
+    _animationController.addStatusListener((status){
+      if(status == AnimationStatus.completed){
+        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomeScreen()));
+      }
+    });
   }
 
   @override
