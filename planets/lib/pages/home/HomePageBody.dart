@@ -81,32 +81,5 @@ class HomePageBody extends StatelessWidget {
       description: "Lorem ipsum...",
       image: "assets/images/mercury.png",
     ),
-    const Planet(
-      id: "3",
-      name: "Moon",
-      location: "Milkyway Galaxy",
-      distance: "54.6m Km",
-      gravity: "1.622 m/s ",
-      description: "Lorem ipsum...",
-      image: "assets/images/moon.png",
-    ),
-    const Planet(
-      id: "4",
-      name: "Earth",
-      location: "Milkyway Galaxy",
-      distance: "54.6m Km",
-      gravity: "9.807 m/s ",
-      description: "Lorem ipsum...",
-      image: "assets/images/earth.png",
-    ),
-    const Planet(
-      id: "5",
-      name: "Mercury",
-      location: "Milkyway Galaxy",
-      distance: "54.6m Km",
-      gravity: "3.7 m/s ",
-      description: "Lorem ipsum...",
-      image: "assets/images/mercury.png",
-    ),
   ];
 }

@@ -52,10 +52,13 @@ class PlanetRow extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 16),
       alignment: FractionalOffset.centerLeft,
-      child: Image(
-        image: AssetImage(planet.image),
-        width: 92,
-        height: 92,
+      child: Hero(
+        tag: "planet-hero-${planet.id}",
+        child: Image(
+          image: AssetImage(planet.image),
+          width: 92,
+          height: 92,
+        ),
       ),
     );
   }
